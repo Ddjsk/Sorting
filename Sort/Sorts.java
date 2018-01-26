@@ -124,21 +124,27 @@ public class Sorts{
         int j = middle + 1;
         // Copy the smallest values from either the left or the right side
         // to the helper
+        
         while (i <= middle || j <= high) {
+            
             if (i > middle) {
                 helper.add(list.get(j));
                 j++;
+                steps+=2;
             }
             else if (j > high){
                 helper.add(list.get(i));
                 i++;
+                steps+=2;
             }
             else if (list.get(i) <= list.get(j)) {
                 helper.add(list.get(i));
                 i++;
+                steps+=5;
             } else {
                 helper.add(list.get(j));
                 j++;
+                steps+=2;
             }
         }
         int m = low;
@@ -146,6 +152,7 @@ public class Sorts{
         for(int l = 0; l < helper.size(); l++) {
             list.set(m, helper.get(l));
             m++;
+            steps+=2;
         }
     }
   /**
