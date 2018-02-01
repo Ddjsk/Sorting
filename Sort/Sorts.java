@@ -155,6 +155,23 @@ public class Sorts{
             steps+=2;
         }
     }
+    public int binarySearch(ArrayList <Integer> list, int key, int min, int max){
+        if(max<min){
+        return -1;
+        }
+        else{
+            int mid = list.size()/2;
+            if(list.get(mid) > key){
+                return binarySearch(list, key, min, mid-1);
+            }
+            else if(list.get(mid) < key){
+                return binarySearch(list, key, mid+1, max);
+            }
+            else{
+                return mid;
+            }
+        }
+    }
   /**
    *  Accessor method to return the current value of steps
    *

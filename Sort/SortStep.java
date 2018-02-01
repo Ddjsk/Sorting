@@ -39,6 +39,8 @@ public class SortStep{
       System.out.println("(3) Insertion sort");
       System.out.println("(4) Recursive mergesort");
       System.out.println("(5) Fill with Integers");
+      System.out.println("(6) Sequential Search");
+      System.out.println("(7) Binary Search");
       System.out.println("(Q) Quit");
       System.out.println();
       System.out.print("Choice ---> ");
@@ -67,17 +69,19 @@ public class SortStep{
               mySorts.mergeSort(myArray, 0, last);
               break;
             case '5':
-        	  listType = "Integer";
-              break;              
+              listType = "Integer";
+              break;
+            case '6':
+              resetArray();
         }
 
         if ('1' <= choice.charAt(0) && choice.charAt(0) <= '4'){
-        	System.out.println();
-        	System.out.println("Array sorted to:");
-	        screenOutput();
-	        System.out.println();
-	        System.out.println("# steps = " + mySorts.getStepCount());
-	        System.out.println();
+            System.out.println();
+            System.out.println("Array sorted to:");
+            screenOutput();
+            System.out.println();
+            System.out.println("# steps = " + mySorts.getStepCount());
+            System.out.println();
         }
       }
     } while (choice.charAt(0) != 'Q' && choice.charAt(0) != 'q');
@@ -112,7 +116,7 @@ public class SortStep{
    */
   private void resetArray(){
     if (myArray == null || listType.equals("Integer")){
-    	fillArrayWithInts();
+        fillArrayWithInts();
     }
 
     System.out.println();
